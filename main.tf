@@ -3,7 +3,6 @@ terraform {
     storage_account_name = "wfinfraprd010104"
     container_name       = "wfinfraprdstate010101"
     key                  = "terraform.core.state"
-    access_key           = "GHbN7UlVP/jX6SvEo8O7EpsXa4PfbYN+j9mNqwqtWkKXPdlv7qIAft3XENcp/mo8noCVihDx2YkuqfzFXvd1wQ=="
   }
 }
 
