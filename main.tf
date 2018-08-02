@@ -1,3 +1,11 @@
+terraform {
+  backend "azurerm" {
+    storage_account_name = "wfinfraprd010103"
+    container_name       = "wfinfraprdstate010101"
+    key                  = "terraform.core.state"
+  }
+}
+
 #Create a resource group to put our resources into
 resource "azurerm_resource_group" "wfinit_resource_group" {
   name     = "${var.organisation}-${var.department}-${var.environment}-init"
@@ -13,7 +21,7 @@ resource "azurerm_resource_group" "wfinit_resource_group" {
 #Create a storage account to put our state files into
 
 resource "azurerm_storage_account" "wfinit_storage_account" {
-  name                     = "${var.organisation}${var.department}${var.environment}010101"
+  name                     = "${var.organisation}${var.department}${var.environment}010103"
   resource_group_name      = "${azurerm_resource_group.wfinit_resource_group.name}"
   location                 = "${azurerm_resource_group.wfinit_resource_group.location}"
   account_tier             = "Standard"
