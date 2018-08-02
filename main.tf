@@ -1,11 +1,11 @@
-# terraform {
-#   backend "azurerm" {
-#     storage_account_name = "wfinfraprd010103"
-#     container_name       = "wfinfraprdstate010101"
-#     key                  = "terraform.core.state"
-#     access_key           = "DDrOUeIgJLtRuZ71vd3LgXRmE6gTRGdFVK5curWezr9K2bb0xdjcDIkzGZurBjUZ053xl0KqMEGwZIEK/5t9nw=="
-#   }
-# }
+terraform {
+  backend "azurerm" {
+    storage_account_name = "wfinfraprd010103"
+    container_name       = "wfinfraprdstate010101"
+    key                  = "terraform.core.state"
+    access_key           = "DDrOUeIgJLtRuZ71vd3LgXRmE6gTRGdFVK5curWezr9K2bb0xdjcDIkzGZurBjUZ053xl0KqMEGwZIEK/5t9nw=="
+  }
+}
 
 #Create a resource group to put our resources into
 resource "azurerm_resource_group" "wfinit_resource_group" {
