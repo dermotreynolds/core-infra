@@ -1,9 +1,9 @@
 terraform {
   backend "azurerm" {
-    storage_account_name = "wfinfraprd010103"
+    storage_account_name = "wfinfraprd010104"
     container_name       = "wfinfraprdstate010101"
     key                  = "terraform.core.state"
-    access_key           = "DDrOUeIgJLtRuZ71vd3LgXRmE6gTRGdFVK5curWezr9K2bb0xdjcDIkzGZurBjUZ053xl0KqMEGwZIEK/5t9nw=="
+    access_key           = "GHbN7UlVP/jX6SvEo8O7EpsXa4PfbYN+j9mNqwqtWkKXPdlv7qIAft3XENcp/mo8noCVihDx2YkuqfzFXvd1wQ=="
   }
 }
 
