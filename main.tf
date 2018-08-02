@@ -1,3 +1,4 @@
+#Persist our state to blob storage
 terraform {
   backend "azurerm" {
     storage_account_name = "wfinfraprd010104"
@@ -16,6 +17,8 @@ resource "azurerm_resource_group" "wfinit_resource_group" {
     department   = "${var.department}"
     organisation = "${var.organisation}"
   }
+
+  lock_level = "CanNotDelete"
 }
 
 #Create a storage account to put our state files into
