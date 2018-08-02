@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "wfinit_resource_group" {
     organisation = "${var.organisation}"
   }
 
-  lock_level = "CanNotDelete"
+  # lock_level = "CanNotDelete"
 }
 
 #Create a storage account to put our state files into
