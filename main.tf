@@ -20,27 +20,27 @@ resource "azurerm_resource_group" "wfinit_resource_group" {
 
 #Create a storage account to put our state files into
 
-resource "azurerm_storage_account" "wfinit_storage_account" {
-  name                     = "${var.organisation}${var.department}${var.environment}010103"
-  resource_group_name      = "${azurerm_resource_group.wfinit_resource_group.name}"
-  location                 = "${azurerm_resource_group.wfinit_resource_group.location}"
-  account_tier             = "Standard"
-  account_replication_type = "GRS"
+# resource "azurerm_storage_account" "wfinit_storage_account" {
+#   name                     = "${var.organisation}${var.department}${var.environment}010103"
+#   resource_group_name      = "${azurerm_resource_group.wfinit_resource_group.name}"
+#   location                 = "${azurerm_resource_group.wfinit_resource_group.location}"
+#   account_tier             = "Standard"
+#   account_replication_type = "GRS"
 
-  tags {
-    environment  = "${var.environment}"
-    department   = "${var.department}"
-    organisation = "${var.organisation}"
-  }
-}
+#   tags {
+#     environment  = "${var.environment}"
+#     department   = "${var.department}"
+#     organisation = "${var.organisation}"
+#   }
+# }
 
-#Create a container to put our state files into
-resource "azurerm_storage_container" "wfinit_storage_container" {
-  name                  = "${var.organisation}${var.department}${var.environment}state010101"
-  resource_group_name   = "${azurerm_resource_group.wfinit_resource_group.name}"
-  storage_account_name  = "${azurerm_storage_account.wfinit_storage_account.name}"
-  container_access_type = "private"
-}
+# #Create a container to put our state files into
+# resource "azurerm_storage_container" "wfinit_storage_container" {
+#   name                  = "${var.organisation}${var.department}${var.environment}state010101"
+#   resource_group_name   = "${azurerm_resource_group.wfinit_resource_group.name}"
+#   storage_account_name  = "${azurerm_storage_account.wfinit_storage_account.name}"
+#   container_access_type = "private"
+# }
 
 data "azurerm_client_config" "current" {}
 
