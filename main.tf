@@ -3,6 +3,7 @@ terraform {
     storage_account_name = "wfinfraprd010103"
     container_name       = "wfinfraprdstate010101"
     key                  = "terraform.core.state"
+    access_key           = "DDrOUeIgJLtRuZ71vd3LgXRmE6gTRGdFVK5curWezr9K2bb0xdjcDIkzGZurBjUZ053xl0KqMEGwZIEK/5t9nw=="
   }
 }
 
@@ -42,52 +43,58 @@ resource "azurerm_storage_container" "wfinit_storage_container" {
   container_access_type = "private"
 }
 
-data "azurerm_client_config" "current" {}
+# data "azurerm_client_config" "current" {}
 
-resource "azurerm_key_vault" "wfcore_key_vault" {
-  name                = "${var.organisation}${var.department}${var.environment}-core"
-  location            = "${azurerm_resource_group.wfinit_resource_group.location}"
-  resource_group_name = "${azurerm_resource_group.wfinit_resource_group.name}"
-  tenant_id           = "${data.azurerm_client_config.current.tenant_id}"
 
-  access_policy {
-    tenant_id = "${data.azurerm_client_config.current.tenant_id}"
-    object_id = "${data.azurerm_client_config.current.service_principal_object_id}"
+# resource "azurerm_key_vault" "wfcore_key_vault" {
+#   name                = "${var.organisation}${var.department}${var.environment}-core"
+#   location            = "${azurerm_resource_group.wfinit_resource_group.location}"
+#   resource_group_name = "${azurerm_resource_group.wfinit_resource_group.name}"
+#   tenant_id           = "${data.azurerm_client_config.current.tenant_id}"
 
-    key_permissions = [
-      "create",
-      "get",
-      "list",
-      "backup",
-      "decrypt",
-      "delete",
-      "encrypt",
-      "get",
-      "import",
-      "list",
-      "purge",
-      "recover",
-      "restore",
-      "sign",
-      "unwrapKey",
-      "update",
-      "verify",
-      "wrapKey",
-    ]
 
-    secret_permissions = [
-      "backup",
-      "delete",
-      "get",
-      "list",
-      "purge",
-      "recover",
-      "set",
-      "restore",
-    ]
-  }
+#   access_policy {
+#     tenant_id = "${data.azurerm_client_config.current.tenant_id}"
+#     object_id = "${data.azurerm_client_config.current.service_principal_object_id}"
 
-  sku {
-    name = "standard"
-  }
-}
+
+#     key_permissions = [
+#       "create",
+#       "get",
+#       "list",
+#       "backup",
+#       "decrypt",
+#       "delete",
+#       "encrypt",
+#       "get",
+#       "import",
+#       "list",
+#       "purge",
+#       "recover",
+#       "restore",
+#       "sign",
+#       "unwrapKey",
+#       "update",
+#       "verify",
+#       "wrapKey",
+#     ]
+
+
+#     secret_permissions = [
+#       "backup",
+#       "delete",
+#       "get",
+#       "list",
+#       "purge",
+#       "recover",
+#       "set",
+#       "restore",
+#     ]
+#   }
+
+
+#   sku {
+#     name = "standard"
+#   }
+# }
+
