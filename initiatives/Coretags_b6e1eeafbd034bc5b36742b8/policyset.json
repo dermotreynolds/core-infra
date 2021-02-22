@@ -1,0 +1,39 @@
+{
+ "properties": {
+  "displayName": "Coretags",
+  "policyType": "Custom",
+  "metadata": {
+   "createdBy": "5014aa70-8762-4899-b586-3e548732a78a",
+   "createdOn": "2021-02-22T13:28:06.2997239Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {},
+  "policyDefinitions": [
+   {
+    "policyDefinitionReferenceId": "Require a tag on resources_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/871b6d14-10aa-478d-b590-94f262ecfa99",
+    "parameters": {
+     "tagName": {
+      "value": "aCostCentre"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Require a tag on resources_2",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/871b6d14-10aa-478d-b590-94f262ecfa99",
+    "parameters": {
+     "tagName": {
+      "value": "aBusUnit"
+     }
+    },
+    "groupNames": []
+   }
+  ],
+  "policyDefinitionGroups": []
+ },
+ "id": "/subscriptions/3d47d488-743d-4899-906c-5487b0586641/providers/Microsoft.Authorization/policySetDefinitions/b6e1eeafbd034bc5b36742b8",
+ "type": "Microsoft.Authorization/policySetDefinitions",
+ "name": "b6e1eeafbd034bc5b36742b8"
+}
